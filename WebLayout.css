@@ -34,6 +34,7 @@ section {
     /* Position the image absolutely */
     left: 10px;
     /* Align to the left of the section */
+    z-index: 1;
 }
 
 .section-img:hover {
@@ -48,6 +49,7 @@ section h1 {
     text-align: center;
     /* Center the text */
     flex: 1;
+    z-index: 2;
     /* Allow the text to center in the flex container */
 }
 
@@ -151,7 +153,7 @@ header {
 .cover {
     background-repeat: no-repeat;
     height: 600px;
-    width: 280px;
+    width: 300px;
     padding: 0%;
     margin: 0%;
 }
@@ -204,19 +206,23 @@ footer a:hover {
 
     section {
         flex-direction: column;
+        /* Stack logo and text */
         height: auto;
         padding: 10px;
     }
 
     .section-img {
         height: 60px;
-        padding-left: 0;
+        position: relative;
+        /* Place it within the flow for small devices */
+        margin-bottom: 10px;
+        /* Add spacing below the image */
     }
 
     section h1 {
         font-size: 20px;
         text-align: center;
-        margin-top: 10px;
+        margin: 0;
     }
 
     nav {
@@ -241,133 +247,66 @@ footer a:hover {
         height: auto;
     }
 
-    #manga-cover aside {
-        flex-direction: column;
-        width: 100%;
-        height: auto;
-    }
-
-    .main {
-        width: 100%;
-    }
-
     footer {
         padding: 10px 0;
     }
+}
 
-    footer a {
-        margin: 5px;
+/* iPhone 14 (width: 390px) */
+@media (max-width: 390px) {
+    body {
+        font-size: 18px;
+    }
+
+    section h1 {
+        font-size: 18px;
+    }
+
+    .section-img {
+        height: 50px;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 10px;
     }
 }
 
-/* Media Query for Tablets (max-width: 1024px) */
+/* iPhone 14 Plus (width: 428px) */
+@media (max-width: 428px) {
+    body {
+        font-size: 20px;
+    }
+
+    section h1 {
+        font-size: 20px;
+    }
+
+    .section-img {
+        height: 60px;
+    }
+
+    footer {
+        font-size: 15px;
+        padding: 15px;
+    }
+}
+
+/* General Tablet and Desktop Styling */
 @media (max-width: 1024px) {
     body {
         font-size: 22px;
     }
 
-    section {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
+    section h1 {
+        font-size: 22px;
     }
 
     .section-img {
         height: 70px;
     }
 
-    section h1 {
-        font-size: 22px;
-    }
-
-    .audio-control {
-        height: 50px;
-        bottom: 20px;
-    }
-
-    nav {
-        flex-direction: column;
-        padding: 20px 0;
-    }
-
-    header {
-        height: 200px;
-        padding: 20px;
-    }
-
-    .header-title {
-        font-size: 1.8rem;
-        padding: 10px;
-    }
-
-    .aside-img,
-    .cover,
-    .middle {
-        width: 90%;
-        height: auto;
-    }
-
-    #manga-cover aside {
-        flex-direction: column;
-        width: 100%;
-        height: auto;
-    }
-
     footer {
         padding: 20px;
-    }
-}
-
-/* Media Query for Large Screens (min-width: 7680px) */
-@media (min-width: 7680px) {
-    body {
-        font-size: 40px;
-        /* Adjust font size for very large screens */
-    }
-
-    section {
-        height: 120px;
-        padding: 0 20px;
-    }
-
-    .section-img {
-        height: 100px;
-    }
-
-    section h1 {
-        font-size: 32px;
-        margin-left: 20px;
-    }
-
-    nav {
-        height: 120px;
-        justify-content: space-between;
-        padding: 0 50px;
-    }
-
-    .header-title {
-        font-size: 3rem;
-    }
-
-    .aside-img,
-    .cover,
-    .middle {
-        width: 500px;
-        height: 750px;
-    }
-
-    #manga-cover aside {
-        flex-direction: row;
-        width: 80%;
-        justify-content: space-between;
-        height: 750px;
-    }
-
-    footer {
-        padding: 40px 0;
-    }
-
-    footer a {
-        margin: 0 20px;
     }
 }
